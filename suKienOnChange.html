@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--bắt sự kiện khi element thay đổi với hàm onchange-->
+<!--TA Có thể bắt sự kiện bằng hàm addEventListener trong js-->
+<body>
+<p>Select a new car from the list</p>
+<!--<select id="mySelect" onchange="do_something()"> // bắt sự kiện bằng onchange với hàm do_something được khai báo trong js-->
+<!--    <option value="audi">audi</option>-->
+<!--    <option value="BMW">BMW</option>-->
+<!--    <option value="Volvo">Volvo</option>-->
+</select>
+<select id="mySelect">  //bắt sự kiện bằng hàm addEventListener trong js
+    <option value="audi">audi</option>
+    <option value="BMW">BMW</option>
+    <option value="Volvo">Volvo</option>
+</select>
+<!--<script>-->
+<!--    // function do_something(){-->
+<!--    //     var selectedValue = document.getElementById("mySelect").value;-->
+<!--    // //     alert(selectedValue);-->
+<!--    // }   -->
+<!--</script>-->
+<script>
+    var selectedElement = document.getElementById("mySelect");
+    selectedElement.addEventListener("change",changeFunction);
+    function changeFunction(){
+        var selectValue = document.getElementById("mySelect").value;
+        // đoạn code trên có ý nghĩa là : hàm changeFuncion được khai báo với
+        // biến selectValue được trọn thông qua hàm getElementByID().value
+        alert(selectValue);
+        // giá trị được trọn sẽ được hiển thị thông qua alert bằng box.
+    }
+</script>
+</body>
+</html>
